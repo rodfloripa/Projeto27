@@ -2,7 +2,7 @@
 RAG usando busca semantica+bm25
 
 <p align="justify">
-  Esta implementação é um sistema de **RAG Adaptativo e Híbrido** bastante sofisticado e moderno. Ela abandona padrões rígidos e utiliza técnicas avançadas para garantir que a recuperação de dados seja    eficiente tanto para buscas semânticas quanto para buscas por palavras-chave.
+  Esta implementação é um sistema de RAG Adaptativo e Híbrido bastante sofisticado e moderno. Ela abandona padrões rígidos e utiliza técnicas avançadas para garantir que a recuperação de dados seja    eficiente tanto para buscas semânticas quanto para buscas por palavras-chave.
 
 </p>
 
