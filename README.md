@@ -7,7 +7,9 @@ RAG usando busca semantica+bm25
 </p>
 
 
-Para rodar
+Para rodar:
+
+crie o diretório docs e coloque seu pdf lá
 
 sudo docker-compose build app && docker-compose run --rm app
 
