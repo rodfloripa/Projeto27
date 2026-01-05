@@ -1,0 +1,8 @@
+langchain==0.3.0
+langchain-community==0.3.0
+langchain-openai
+langchain-milvus
+langchain-text-splitters
+rank_bm25
+pypdf
+pymilvus
