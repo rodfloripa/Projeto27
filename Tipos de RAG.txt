@@ -1,55 +1,59 @@
 RAG
 
-1. Standard RAG
-- Descrição: É a arquitetura mais simples e direta, ideal para começar. Ela trata a recuperação como uma busca única (one-shot lookup) e assume que o mecanismo de recuperação funcionará perfeitamente na primeira tentativa.
-- Prós: Latência baixa (<1s), custo mínimo, fácil de debugar.
-- Contras: Suscetível a ruído, sem autocorreção.
-- Melhor para: FAQs, bases pequenas e estruturadas.
+<p align="justify">
+  
+  1. Standard RAG
+  - Descrição: É a arquitetura mais simples e direta, ideal para começar. Ela trata a recuperação como uma busca única (one-shot lookup) e assume que o mecanismo de recuperação funcionará perfeitamente na primeira tentativa.
+  - Prós: Latência baixa (<1s), custo mínimo, fácil de debugar.
+  - Contras: Suscetível a ruído, sem autocorreção.
+  - Melhor para: FAQs, bases pequenas e estruturadas.
+  
+  2. Conversational RAG
+  - Descrição: Adiciona memória para conversas naturais, evitando repetições.
+  - Prós: Experiência natural, evita repetições.
+  - Contras: Memory drift, custo de tokens maior.
+  - Melhor para: Chatbots, assistentes conversacionais.
+  
+  3. Corrective RAG
+  - Descrição: Valida a qualidade dos documentos recuperados antes de gerar a resposta, reduzindo alucinações.
+  - Prós: Reduz alucinações, preenche lacunas de dados.
+  - Contras: Latência alta (2-4s), custo de APIs.
+  - Melhor para: Saúde, legal, compliance crítico.
+  
+  4. Adaptive RAG
+  - Descrição: Gerencia recursos computacionais de forma inteligente, roteando consultas para diferentes mecanismos de recuperação.
+  - Prós: Economia massiva, latência ótima para queries simples.
+  - Contras: Risco de classificação incorreta.
+  - Melhor para: Alta variação de complexidade, orçamento limitado.
 
-2. Conversational RAG
-- Descrição: Adiciona memória para conversas naturais, evitando repetições.
-- Prós: Experiência natural, evita repetições.
-- Contras: Memory drift, custo de tokens maior.
-- Melhor para: Chatbots, assistentes conversacionais.
+  5. Self-RAG
+  - Descrição: O modelo critica seu próprio raciocínio em tempo real, gerando tokens de reflexão especiais.
+  - Prós: Máxima fundamentação, transparência total.
+  - Contras: Requer fine-tuning, overhead extremo.
+  - Melhor para: Pesquisa acadêmica, citação crítica.
+  
+  6. Hybrid RAG
+  - Descrição: Combina busca vetorial e lexical para recall excepcional.
+  - Prós: Recall excepcional, robustez a fraseado ruim.
+  - Contras: Custo 3x-5x, latência aumentada.
+  - Melhor para: Pesquisa científica, terminologia técnica.
+  
+  7. HyDE
+  - Descrição: Gera uma resposta hipotética antes de buscar a real, melhorando a busca conceitual.
+  - Prós: Melhora busca conceitual, não requer fine-tuning.
+  - Contras: Risco de viés, ineficiente para lookups simples.
+  - Melhor para: Consultas vagas, busca conceitual.
+  
+  8. Agentic RAG
+  - Descrição: Lida com consultas multi-partes, dados em tempo real, usando orquestração de ferramentas.
+  - Prós: Lida com multi-partes, dados em tempo real.
+  - Contras: Latência alta (5-15s), custo significativo.
+  - Melhor para: Análise multi-fonte, consultoria estratégica.
+  
+  9. GraphRAG
+  - Descrição: Usa um grafo de conhecimento para raciocínio causal e análise de redes.
+  - Prós: Raciocínio causal, precisão ~99% em domínios estruturados.
+  - Contras: Alto custo de construção, computacionalmente caro.
+  - Melhor para: Análise de redes, detecção de fraude, pesquisa científica
 
-3. Corrective RAG
-- Descrição: Valida a qualidade dos documentos recuperados antes de gerar a resposta, reduzindo alucinações.
-- Prós: Reduz alucinações, preenche lacunas de dados.
-- Contras: Latência alta (2-4s), custo de APIs.
-- Melhor para: Saúde, legal, compliance crítico.
-
-4. Adaptive RAG
-- Descrição: Gerencia recursos computacionais de forma inteligente, roteando consultas para diferentes mecanismos de recuperação.
-- Prós: Economia massiva, latência ótima para queries simples.
-- Contras: Risco de classificação incorreta.
-- Melhor para: Alta variação de complexidade, orçamento limitado.
-
-5. Self-RAG
-- Descrição: O modelo critica seu próprio raciocínio em tempo real, gerando tokens de reflexão especiais.
-- Prós: Máxima fundamentação, transparência total.
-- Contras: Requer fine-tuning, overhead extremo.
-- Melhor para: Pesquisa acadêmica, citação crítica.
-
-6. Hybrid RAG
-- Descrição: Combina busca vetorial e lexical para recall excepcional.
-- Prós: Recall excepcional, robustez a fraseado ruim.
-- Contras: Custo 3x-5x, latência aumentada.
-- Melhor para: Pesquisa científica, terminologia técnica.
-
-7. HyDE
-- Descrição: Gera uma resposta hipotética antes de buscar a real, melhorando a busca conceitual.
-- Prós: Melhora busca conceitual, não requer fine-tuning.
-- Contras: Risco de viés, ineficiente para lookups simples.
-- Melhor para: Consultas vagas, busca conceitual.
-
-8. Agentic RAG
-- Descrição: Lida com consultas multi-partes, dados em tempo real, usando orquestração de ferramentas.
-- Prós: Lida com multi-partes, dados em tempo real.
-- Contras: Latência alta (5-15s), custo significativo.
-- Melhor para: Análise multi-fonte, consultoria estratégica.
-
-9. GraphRAG
-- Descrição: Usa um grafo de conhecimento para raciocínio causal e análise de redes.
-- Prós: Raciocínio causal, precisão ~99% em domínios estruturados.
-- Contras: Alto custo de construção, computacionalmente caro.
-- Melhor para: Análise de redes, detecção de fraude, pesquisa científica
+</p>
