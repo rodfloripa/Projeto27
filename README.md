@@ -82,9 +82,9 @@ Arquitetura de Fluxo da RAG
  
 Outras Decisões de Projeto Relevantes
 
-*   Tratamento de Exceções no Milvus: Você adicionou um loop de 5 tentativas (for i in range(5)) com time.sleep(5) ao conectar ao banco. Isso é uma decisão de engenharia para lidar com problemas de rede ou tempo de subida do container Docker ("standalone"), algo que as chains prontas não fazem sozinhas.
+*   Tratamento de Exceções no Milvus: Adicionei um loop de 5 tentativas (for i in range(5)) com time.sleep(5) ao conectar ao banco. Isso é uma decisão de engenharia para lidar com problemas de rede ou tempo de subida do container Docker ("standalone"), algo que as chains prontas não fazem sozinhas.
 
-*  Deduplicação Manual: No método hybrid_retrieve, você usa um set() para garantir que o mesmo conteúdo não seja enviado duas vezes para o GPT. Isso economiza dinheiro (tokens) e evita que a IA fique confusa com informações repetidas.
+*  Deduplicação Manual: No método hybrid_retrieve, uso um set() para garantir que o mesmo conteúdo não seja enviado duas vezes para o GPT. Isso economiza dinheiro (tokens) e evita que a IA fique confusa com informações repetidas.
 
 *  Pós-processamento de Resposta: O uso de re.findall para extrair as fontes após a geração da resposta permite que o sistema seja honesto. Ele não lista todas as fontes recuperadas, apenas aquelas que a IA realmente utilizou para formular o texto.
 
