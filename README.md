@@ -16,7 +16,7 @@ Abaixo, detalho as características principais e as decisões de projeto tomadas
 Uma das evoluções mais importantes no código é o uso de **LCEL** na linha:
 `chain = prompt | self.llm | StrOutputParser()`.
 
-* **Por que abandonar as chains antigas?** As classes antigas (como `RetrievalQA`) eram "caixas pretas" difíceis de customizar. O LCEL usa o operador pipe (`|`), tornando o fluxo de dados explícito.
+* **Por que abandonar as <a href="https://github.com/rodfloripa/Projeto27/blob/main/Relatorio%20de%20Crise.pdf">chains antigas</a>?** As classes antigas (como `RetrievalQA`) eram "caixas pretas" difíceis de customizar. O LCEL usa o operador pipe (`|`), tornando o fluxo de dados explícito.
 * **Componibilidade:** É muito mais fácil adicionar um parser de saída ou modificar o prompt sem precisar herdar classes complexas.
 * **Streaming e Async:** O LCEL suporta nativamente execução assíncrona e streaming de tokens, o que facilita escalar o sistema no futuro.
 
