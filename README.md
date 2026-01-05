@@ -26,6 +26,8 @@ sudo docker-compose build app && docker-compose run --rm app
 
 Abaixo, detalho as características principais e as decisões de projeto tomadas:
 
+<a href="https://github.com/rodfloripa/Projeto27/blob/main/Tipos%20de%20RAG.md">Veja os tipos de RAG</a>
+
 ---
 
 ## 1. Mudança para LCEL (LangChain Expression Language)
