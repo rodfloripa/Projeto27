@@ -3,6 +3,10 @@ RAG usando busca semantica+bm25
 
 Esta implementação é um sistema de **RAG Adaptativo e Híbrido** bastante sofisticado e moderno. Ela abandona padrões rígidos e utiliza técnicas avançadas para garantir que a recuperação de dados seja eficiente tanto para buscas semânticas quanto para buscas por palavras-chave.
 
+Para rodar
+
+sudo docker-compose build app && docker-compose run --rm app
+
 Abaixo, detalho as características principais e as decisões de projeto tomadas:
 
 ---
@@ -82,4 +86,4 @@ Outras Decisões de Projeto Relevantes
 | **Fidelidade** | Prompt restritivo ("Use APENAS o contexto") |
 | **Transparência** | Rodapé dinâmico com arquivo e página |
 
-**Deseja que eu ajude a implementar uma lógica de "Re-ranking" para melhorar ainda mais a ordem desses resultados antes de enviar para o GPT?**
+
