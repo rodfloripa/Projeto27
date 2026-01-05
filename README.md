@@ -27,8 +27,9 @@ Uma das evoluções mais importantes no código é o uso de **LCEL** na linha:
 ---
 
 ## 2. Configuração Adaptativa de Hiperparâmetros
-
-O método `_setup_adaptive_params` é um diferencial raro em implementações básicas. O sistema analisa o volume total de texto antes de indexar.
+<p align="justify">
+  O método `_setup_adaptive_params` é um diferencial raro em implementações básicas. O sistema analisa o volume total de texto antes de indexar.
+</p>
 
 * **Decisão de Projeto:** * **Documentos pequenos:** Usa chunks menores () para precisão cirúrgica.
 * **Documentos grandes:** Usa chunks maiores () e recupera mais documentos ().
@@ -39,8 +40,10 @@ O método `_setup_adaptive_params` é um diferencial raro em implementações b�
 ---
 
 ## 3. Arquitetura de Recuperação Híbrida
+<p align="justify">
+  A classe utiliza dois motores de busca simultâneos no método `hybrid_retrieve`:
+</p>
 
-A classe utiliza dois motores de busca simultâneos no método `hybrid_retrieve`:
 
 1. **Milvus (Busca Vetorial):** Utiliza o modelo `text-embedding-3-large` para entender o **conceito** da pergunta (busca semântica). Usa o modo `mmr` (Maximal Marginal Relevance) para garantir que os resultados sejam diversos e não repetitivos.
 2. **BM25 (Busca de Palavras-chave):** Um algoritmo estatístico que foca em termos exatos. É excelente para encontrar nomes próprios, códigos ou termos técnicos que os embeddings podem "confundir".
@@ -50,8 +53,9 @@ A classe utiliza dois motores de busca simultâneos no método `hybrid_retrieve`
 ---
 
 ## 4. Rastreabilidade e Citação (O "Pé de Página")
-
-Uma decisão crítica de design foi a implementação manual de um sistema de citações.
+<p align="justify">
+  Uma decisão crítica de design foi a implementação manual de um sistema de citações.
+</p>
 
 * **Mapeamento `id_to_source`:** Durante a recuperação, o código cria um dicionário que vincula o número da fonte ao arquivo e página originais.
 * **Regex de Captura:** O sistema usa `re.findall(r'Fonte\s?(\d+)')` para varrer a resposta do GPT. Ele só lista no rodapé as fontes que a IA **realmente citou** no texto.
@@ -70,8 +74,10 @@ Uma decisão crítica de design foi a implementação manual de um sistema de ci
 
 
 Arquitetura de Fluxo da RAG
-
-Para visualizar como essas decisões de projeto se conectam e evitam os erros das chains tradicionais, veja o fluxo de dados implementado:
+<p align="justify">
+  Para visualizar como essas decisões de projeto se conectam e evitam os erros das chains tradicionais, veja o fluxo de dados implementado:
+</p>
+ 
 Outras Decisões de Projeto Relevantes
 
 *   Tratamento de Exceções no Milvus: Você adicionou um loop de 5 tentativas (for i in range(5)) com time.sleep(5) ao conectar ao banco. Isso é uma decisão de engenharia para lidar com problemas de rede ou tempo de subida do container Docker ("standalone"), algo que as chains prontas não fazem sozinhas.
