@@ -59,20 +59,7 @@ Uma decisão crítica de design foi a implementação manual de um sistema de ci
 * **RecursiveCharacterTextSplitter:** Diferente de um splitter simples, ele tenta manter parágrafos e frases juntos, respeitando a estrutura semântica do texto.
 
 ---
-O Problema das Chains Antigas vs. A Solução LCEL
 
-As chains antigas funcionavam como uma "caixa preta". Quando ocorria um erro de tipagem ou de conexão entre o banco de dados e o modelo, era quase impossível rastrear em qual etapa o dado se perdia.
-1. Transparência e Depuração
-
-    Nas Chains Antigas: O fluxo era interno. Se o Milvus retornasse um formato de dado levemente diferente, a chain quebrava com erros genéricos.
-
-    No  código (LCEL): Com a estrutura prompt | self.llm | StrOutputParser(), cada etapa é um objeto independente. Você consegue ver exatamente o que sai do prompt e entra no modelo, facilitando a correção de erros de entrada/saída.
-
-2. Controle do Contexto
-
-    Erro comum: As chains padrão tentavam injetar o contexto automaticamente, o que frequentemente estourava o limite de tokens ou formatava as fontes de maneira confusa.
-
-    Sua decisão: Você optou por montar o context_parts manualmente em uma lista e injetá-lo no dicionário do invoke. Isso garante que você tenha controle total sobre como as fontes aparecem para a IA, evitando os erros de formatação que as chains automáticas causavam.
 
 Arquitetura de Fluxo da RAG
 
