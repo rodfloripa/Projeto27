@@ -8,6 +8,7 @@ RAG usando busca semantica+bm25
 
 
 Para rodar:
+<br><br>
 
 crie o .env
 
@@ -16,10 +17,12 @@ OPENAI_API_KEY=sk...
 MILVUS_HOST=standalone
 
 REDIS_HOST=redis
+<br><br>
 
 crie o diretório docs e coloque seu pdf lá
 
 sudo docker-compose build app && docker-compose run --rm app
+<br><br>
 
 Abaixo, detalho as características principais e as decisões de projeto tomadas:
 
