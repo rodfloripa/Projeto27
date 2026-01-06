@@ -6,8 +6,10 @@ RAG usando busca semantica+bm25
 
 </p>
 
-![Rag rodando]([URL_da_imagem](https://github.com/rodfloripa/Projeto27/blob/main/rag-exec.png))
-
+![Rag rodando](https://github.com/rodfloripa/Projeto27/blob/main/rag-exec.png)
+<p align="center">
+Rag rodando
+</p>
 
 Para rodar:
 <br><br>
