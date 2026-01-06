@@ -6,6 +6,8 @@ RAG usando busca semantica+bm25
 
 </p>
 
+<a href="https://sciences.ucf.edu/statistics/dms/siemens-2017-wind-analytics-contest/">Rag rodando</a>
+
 
 Para rodar:
 <br><br>
