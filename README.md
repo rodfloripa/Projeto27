@@ -6,7 +6,7 @@ RAG usando busca semantica+bm25
 
 </p>
 
-<a href="https://sciences.ucf.edu/statistics/dms/siemens-2017-wind-analytics-contest/">Rag rodando</a>
+![Rag rodando]([URL_da_imagem](https://github.com/rodfloripa/Projeto27/blob/main/rag-exec.png))
 
 
 Para rodar:
